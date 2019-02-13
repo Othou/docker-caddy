@@ -7,7 +7,7 @@ ARG dns=tls.dns.cloudflare,tls.dns.azure,tls.dns.rfc2136
 
 RUN apk add --no-cache openssh-client git tar curl ca-certificates bash && update-ca-certificates
 
-RUN curl --silent https://getcaddy.com | /bin/bash -s personal $plugins,$dns
+RUN curl --silent https://getcaddy.com | bash -s personal $plugins,$dns
 
 RUN mkdir -p /opt/assets
 
